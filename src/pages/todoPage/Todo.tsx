@@ -5,10 +5,15 @@ import {
   IonInput,
   IonItem,
   IonButton,
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
 } from "@ionic/react";
 import TodoItem from "../../components/todoItem/TodoItem";
 import CustomModal from "../../components/customModal/customModal";
 import { todoClass } from "../../classes/todoClass";
+import "./Todo.css";
 
 const Home: React.FC = () => {
   const [todos, setTodos] = useState<todoClass[]>([
@@ -45,8 +50,13 @@ const Home: React.FC = () => {
 
   return (
     <IonContent>
-      {/* Lista de Todos */}
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Todo´s Page</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonList>
+        {/* Lista de Todos */}
         {todos.map((todo, index) => (
           <TodoItem
             key={index}
@@ -64,9 +74,15 @@ const Home: React.FC = () => {
       </IonList>
 
       {/* Botón para abrir modal de agregar */}
-      <IonButton expand="block" onClick={() => setShowAddModal(true)}>
-        Agregar Todo
-      </IonButton>
+      <div className="button-container">
+        <IonButton
+          expand="block"
+          className="add-button"
+          onClick={() => setShowAddModal(true)}
+        >
+          Agregar Todo
+        </IonButton>
+      </div>
 
       {/* Modal para confirmar eliminación */}
       <CustomModal
