@@ -1,0 +1,35 @@
+/* Centrar contenido del modal */
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Contenedor principal del modal */
+.custom-modal {
+  --width: fit-content;
+  --min-width: 300px;
+  --height: fit-content;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor interno para centrar */
+.modal-container {
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Ajustes para el contenido */
+ion-content {
+  max-height: 60vh; /* Altura máxima para el contenido */
+  overflow-y: auto;
+}
+
+/* Toolbar inferior */
+ion-toolbar {
+  padding: 8px;
+}

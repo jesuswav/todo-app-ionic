@@ -1,0 +1,36 @@
+/* Contenedor principal */
+.todo-item {
+  --background: #ffffff00;
+  --border-radius: 12px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin: 22px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #323232;
+  border-radius: 22px;
+}
+
+/* Contenido del Todo */
+.todo-content {
+  margin-left: 10px;
+}
+
+/* Título completado */
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Estado (Pendiente/Completado) */
+.todo-status {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Botón de eliminar */
+ion-button {
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
