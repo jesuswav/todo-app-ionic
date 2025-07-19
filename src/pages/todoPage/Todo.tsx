@@ -18,7 +18,10 @@ const Home: React.FC = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const [todoToDelete, setTodoToDelete] = useState<number | null>(null);
-  const [newTodo, setNewTodo] = useState({ nombre: "", descripcion: "" });
+  const [newTodo, setNewTodo] = useState({
+    nombre: "Nombre",
+    descripcion: "Descripción",
+  });
 
   // Eliminar Todo
   const handleDelete = (index: number) => {
@@ -82,24 +85,27 @@ const Home: React.FC = () => {
         onClose={() => setShowAddModal(false)}
         onConfirm={handleAddTodo}
       >
-        <IonItem>
-          <IonInput
-            label="Nombre"
-            value={newTodo.nombre}
-            onIonChange={(e) =>
-              setNewTodo({ ...newTodo, nombre: e.detail.value! })
-            }
-          />
-        </IonItem>
-        <IonItem>
-          <IonInput
-            label="Descripción"
-            value={newTodo.descripcion}
-            onIonChange={(e) =>
-              setNewTodo({ ...newTodo, descripcion: e.detail.value! })
-            }
-          />
-        </IonItem>
+        <IonContent>
+          <IonItem>
+            <p>Hola</p>
+            <IonInput
+              label="Nombre"
+              value={newTodo.nombre}
+              onIonChange={(e) =>
+                setNewTodo({ ...newTodo, nombre: e.detail.value! })
+              }
+            />
+          </IonItem>
+          <IonItem>
+            <IonInput
+              label="Descripción"
+              value={newTodo.descripcion}
+              onIonChange={(e) =>
+                setNewTodo({ ...newTodo, descripcion: e.detail.value! })
+              }
+            />
+          </IonItem>
+        </IonContent>
       </CustomModal>
     </IonContent>
   );

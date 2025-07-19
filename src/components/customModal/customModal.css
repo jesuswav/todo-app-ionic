@@ -1,11 +1,3 @@
-/* Centrar contenido del modal */
-ion-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
 /* Contenedor principal del modal */
 .custom-modal {
   --width: fit-content;

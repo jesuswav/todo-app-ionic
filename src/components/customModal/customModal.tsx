@@ -32,8 +32,8 @@ const CustomModal: React.FC<CustomModalProps> = ({
   showConfirm = true,
   confirmText = "Confirmar",
   cancelText = "Cancelar",
-  width = "80%",
-  height = "auto",
+  width = "100%",
+  height = "77vh",
 }) => {
   return (
     <IonModal
@@ -42,24 +42,26 @@ const CustomModal: React.FC<CustomModalProps> = ({
       className="custom-modal"
       backdropDismiss={false}
     >
-      <IonHeader>
+      <div className="modal-container" style={{ width, height }}>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>{title}</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent className="ion-padding">{children}</IonContent>
         <IonToolbar>
-          <IonTitle>{title}</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">{children}</IonContent>
-      <IonToolbar>
-        <IonButtons slot="end">
-          <IonButton onClick={onClose} color="medium">
-            {cancelText}
-          </IonButton>
-          {showConfirm && (
-            <IonButton onClick={onConfirm} color="primary">
-              {confirmText}
+          <IonButtons slot="end">
+            <IonButton onClick={onClose} color="medium">
+              {cancelText}
             </IonButton>
-          )}
-        </IonButtons>
-      </IonToolbar>
+            {showConfirm && (
+              <IonButton onClick={onConfirm} color="primary">
+                {confirmText}
+              </IonButton>
+            )}
+          </IonButtons>
+        </IonToolbar>
+      </div>
     </IonModal>
   );
 };
